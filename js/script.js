@@ -22,20 +22,15 @@ function sendMsg(msg) {
     modalContainer.innerHTML = modal;
 
     const buyBtn = document.querySelector("#buy-btn");
-    buyBtn.addEventListener("click", (event) => buyStiker(event));
+    buyBtn.addEventListener("click", (event) => closeModal(event));
 
     const closeBtn = document.querySelector("#close-btn");
     closeBtn.addEventListener("click", (event) => closeModal(event));
-}
-
-function buyStiker(event) {
-    event.preventDefault();
-    sectionSendMsg.innerHTML = "";
-    modalContainer.innerHTML = "";
 }
 
 function closeModal(event) {
     event.preventDefault();
     sectionSendMsg.innerHTML = "";
     modalContainer.innerHTML = "";
+    window.scrollTo(0,0);
 }
