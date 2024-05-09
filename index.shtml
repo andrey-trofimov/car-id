@@ -64,7 +64,7 @@
             </section>
         </main>
 
-        <!--#include file="footer.html"-->
+        <!--#include file="./footer.html"-->
     </body>
     <script type="module" src="./js/script.js"></script>
 </html>
