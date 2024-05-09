@@ -64,26 +64,7 @@
             </section>
         </main>
 
-        <footer class="footer">
-            <div class="footer-contetnt">
-                <nav>
-                    <ul>
-                        <li><a href="" target="_blank">О нас</a></li>
-                        <li><a href="" target="_blank">Контакты</a></li>
-                        <li><a href="" target="_blank">Скачать приложение</a></li>
-                        <li><a href="" target="_blank">Купить стикер Car-id</a></li>
-                        <li><a href="" target="_blank">Публичная оферта</a></li>
-                        <li><a href="" target="_blank">Политика конфиденциальности</a></li>
-                    </ul>
-
-                    <a class="telegram" href="https://web.telegram.org/" target="_blank">
-                        <img src="./img/tg-logo.png" width="51px" height="43px" alt="telegram logo" />
-                    </a>
-                </nav>
-
-                <span class="copyright">©️ 2024 Car-id</span>
-            </div>
-        </footer>
+        <!--#include file="footer.html"-->
     </body>
     <script type="module" src="./js/script.js"></script>
 </html>
