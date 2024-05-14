@@ -2,8 +2,9 @@ export const modal = `
     <div class="modal">
         <div class="container">
             <h2>Cообщение отправлено</h2>
-            <p>Владелец авто получит уведомление в приложение Car-id</p>
-            <button id="buy-btn" class="secondary-btn">Купить стикер Car-id</button>
+            <p>Владелец авто получит уведомление в приложение Car ID.</p>
+            <p>Ожидаем ответа от владельца автомобиля.</p>
+            <p>Здесь появится сообщение когда он увидит. Не закрывайте браузер и разрешите отправку уведомлений.</p>
             <button id="close-btn" class="primary-btn">Закрыть</button>
         </div>
     </div>

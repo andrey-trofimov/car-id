@@ -24,6 +24,7 @@
     --red-counter: #ff5449;
     --orange-a: #db5430;
     --black-f: rgba(0, 0, 0, 0.6);
+    --black-j: rgba(0, 0, 0, 0.1);
 }
 
 html {
@@ -53,7 +54,7 @@ body {
 }
 
 .main {
-    padding: 0 16px 265px;
+    padding: 0 16px 225px;
 }
 
 .logo {
@@ -106,6 +107,14 @@ p {
     cursor: pointer;
 }
 
+.primary-btn:disabled,
+.secondary-btn:disabled {
+    background: var(--grey-light);
+    color: var(--black-j);
+    border-color: var(--grey-light);
+    cursor: not-allowed;
+}
+
 /* section send-msg ====================================== */
 #send-msg {
     margin-top: 0px;
@@ -114,6 +123,23 @@ p {
 .form {
     margin-top: 14px;
     margin-bottom: 53px;
+
+    p {
+        margin-top: 36px;
+        margin-left: 6px;
+        font-size: 0.75rem;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    a {
+        color: #e86c4a;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 #radio-btns {
@@ -129,10 +155,6 @@ p {
             min-width: 300px;
         }
     }
-
-    /* label:nth-last-child(-2n+1){
-        max-width: 50%;
-    } */
 }
 
 /* Customize the label (the custom-radio) */
@@ -176,7 +198,7 @@ p {
 }
 
 #submit {
-    margin-top: 36px;
+    margin-top: 12px;
 }
 
 /* section buy-sticker ====================================== */
@@ -211,6 +233,7 @@ p {
         background-repeat: no-repeat;
     }
 }
+
 /* section download-app ===================================== */
 .download-app {
     margin-top: 54px;
@@ -267,17 +290,17 @@ p {
 }
 
 /* section footer =========================================== */
-.footer{   
+.footer {
     position: absolute;
-    bottom: 0; 
+    bottom: 0;
     width: 100%;
     z-index: 0;
 }
 
 .footer-contetnt {
-    min-height: 225px;
+    /* min-height: 172px; */
     margin: 0 auto;
-    padding: 24px 32px;
+    padding: 36px 32px;
 
     border-radius: 28px 28px 0 0;
 
@@ -313,8 +336,12 @@ p {
                 }
             }
 
-            li:nth-child(2n) {
+            li:nth-child(2n + 1) {
                 margin-bottom: 16px;
+            }
+
+            li:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -324,8 +351,8 @@ p {
     display: block;
     color: #a6a6a6;
     margin-top: 16px;
-    position: absolute;
-    bottom: 24px;
+    /* position: absolute; */
+    /* bottom: 24px; */
 }
 
 .telegram {
@@ -333,7 +360,7 @@ p {
 }
 
 /* modal window =========================================== */
-body:has(.modal){
+body:has(.modal) {
     overflow: hidden;
 }
 
@@ -391,5 +418,23 @@ body:has(.modal){
 
     .primary-btn {
         margin-top: 12px;
+    }
+}
+
+/* event list loader =============== */
+.event-list-loader {
+    border-radius: 24px;
+    height: 72px;
+    width: 100%;
+    margin-bottom: 14px;
+    background: linear-gradient(105deg, var(--grey-light) 20%, white 50%, var(--grey-light) 80%);
+
+    background-position: 0 0;
+    animation: list-loader 3s infinite ease-in-out;
+}
+
+@keyframes list-loader {
+    100% {
+      background-position: 700px 0;
     }
 }
