@@ -1,4 +1,4 @@
-import { sentMessegeNotice, waitingForReadingNotice, readMessegeNotice } from "./systemMessages.js";
+import { sentMessageNotice, waitingForReadingNotice, readMessageNotice } from "./systemMessages.js";
 
 const carEventsContainer = document.querySelector("#radio-btns");
 const submitBtn = document.querySelector("#submit");
@@ -65,7 +65,7 @@ async function sendMsg(eventId) {
                 showError(answer.error_message, "Чуть помедленнее");
             } else {
                 notificationId = answer.notification_id;
-                openModal(sentMessegeNotice);
+                openModal(sentMessageNotice);
                 checkMsgStatus();
             }
         } else {
@@ -93,7 +93,7 @@ async function checkMsgStatus() {
             }
             if (msgStatus.status === "READ") {
                 clearTimeout(timeoutId);
-                sectionSendMsg.innerHTML = readMessegeNotice;
+                sectionSendMsg.innerHTML = readMessageNotice;
             }
         } else {
             showError(response.status);

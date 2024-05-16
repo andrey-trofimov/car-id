@@ -1,4 +1,4 @@
-export const sentMessegeNotice = `
+export const sentMessageNotice = `
     <div class="modal">
         <div class="container">
             <h2>Cообщение отправлено</h2>
@@ -20,7 +20,7 @@ export const waitingForReadingNotice = `
     </div>
 `;
 
-export const readMessegeNotice = `
+export const readMessageNotice = `
     <div class="notice">
         <h2>Сообщение прочитано</h2>
         <p>Ожидайте водителя.</p>
