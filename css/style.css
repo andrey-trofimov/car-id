@@ -71,8 +71,7 @@ h2 {
     margin: 0;
 }
 
-p,
-li {
+p {
     font-weight: 400;
     font-size: 0.88rem;
     text-align: center;
@@ -203,12 +202,19 @@ li {
 }
 
 /* section about ============================================ */
-p,
-li {
-    text-align: left;
-}
 
 .about {
+    li {
+        font-weight: 400;
+        font-size: 0.88rem;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    p,
+    li {
+        text-align: left;
+    }
+
     P {
         padding-left: 20px;
         padding-right: 20px;
