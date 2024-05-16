@@ -71,7 +71,8 @@ h2 {
     margin: 0;
 }
 
-p {
+p,
+li {
     font-weight: 400;
     font-size: 0.88rem;
     text-align: center;
@@ -199,6 +200,23 @@ p {
 
 #submit {
     margin-top: 12px;
+}
+
+/* section about ============================================ */
+p,
+li {
+    text-align: left;
+}
+
+.about {
+    P {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    h2:nth-child(3) {
+        margin-top: 20px;
+    }
 }
 
 /* section buy-sticker ====================================== */
@@ -435,6 +453,46 @@ body:has(.modal) {
 
 @keyframes list-loader {
     100% {
-      background-position: 700px 0;
+        background-position: 768px 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    @keyframes list-loader {
+        100% {
+            background-position: calc(100vw - 32px) 0;
+        }
+    }
+}
+
+/* notice ======================= */
+.notice .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 40px;
+
+    .spinner {
+        -webkit-animation: spin 5s linear infinite;
+        animation: spin 5s ease-in-out infinite;
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
