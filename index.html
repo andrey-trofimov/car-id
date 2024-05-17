@@ -13,28 +13,25 @@
         <div class="modal-container"></div>
 
         <header class="header">
-            <a href="./about.html" class="logo">
+            <a href="/" class="logo">
                 <img src="./img/logo.svg" width="125" width="34" alt="logo" />
             </a>
         </header>
 
         <main class="main">
-            <section id="send-msg">
-                <h2>Сообщить о событии</h2>
-                <p>Выберите событие и мы отправим владельцу авто уведомление в приложение</p>
-
-                <form class="form">
-                    <div id="radio-btns">
-                        <div class="event-list-loader"></div>
-                        <div class="event-list-loader"></div>
-                        <div class="event-list-loader"></div>
-                    </div>
-                    <p class="notification">
-                        Продолжая Вы соглашаетесь с
-                        <a href="https://car-id.ru/offer" target="_blank">правилами сервиса</a>
-                    </p>
-                    <button id="submit" class="primary-btn" disabled>Сообщить</button>
-                </form>
+            <section id="about" class="about">
+                <h2>О сервисе</h2>
+                <p>
+                    Автовизитка Сar ID - это уникальное решение, позволяющее вам, как владельцу авто, всегда оставаться
+                    на связи, обеспечивая конфиденциальность и удобство доставки сообщений через различные каналы связи.
+                </p>
+                <h2>В Car ID вы сможете:</h2>
+                <ol>
+                    <li>видеть ленту уведомлений</li>
+                    <li>управлять каналами связи</li>
+                    <li>сообщать о событиях другим владельцам авто</li>
+                </ol>
+                <button class="primary-btn" onclick='window.location.href="/qr.html"' style="margin-top: 50px; margin-bottom: 50px;">Посмотреть в работе</button>
             </section>
 
             <section class="buy-sticker">
@@ -90,5 +87,4 @@
             </div>
         </footer>
     </body>
-    <script type="module" src="./js/script.js"></script>
 </html>

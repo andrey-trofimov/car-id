@@ -41,7 +41,7 @@ function readMsg(event) {
 }
 
 async function sendMsg(eventId) {
-    // let windowLocationPathname = window.location;
+    // let windowLocationPathname = window.location.pathname;
     const windowLocationPathname = "/qr/74b82e70-c612-4b7c-995a-e3bb88d3ad4a";
     const fetchUrl = "https://car-id.ru/api/report/send";
 
