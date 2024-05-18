@@ -271,7 +271,7 @@ p {
     padding: 0 16px 0 148px;
     min-height: 110px;
     font-family: var(--second-family);
-    background: url("../img/app-section-bg.png") left 16px top no-repeat;
+    background: url("../img/logo-icon.svg") left 16px top no-repeat;
 
     @media screen and (max-width: 320px) {
         padding: 130px 16px 0 16px;
