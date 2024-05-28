@@ -80,7 +80,8 @@ async function sendMsg(eventId) {
 
 function checkMsgStatus(event) {
     closeModal(event);
-    window.location.href = `/notification/737/`;
+    const pathnamePrefix = window.location.host === 'andrey-trofimov.github.io' ? '/car-id' : ''; 
+    window.location.href = `${pathnamePrefix}/notification/737/`;
     // window.location.href = `/notification/${notificationId}/`;
 }
 
