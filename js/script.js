@@ -1,16 +1,15 @@
-import { sentMessageNotice, waitingForReadingNotice, readMessageNotice } from "./systemMessages.js";
+import { sentMessageNotice } from "./systemMessages.js";
 
 const carEventsContainer = document.querySelector("#radio-btns");
 const submitBtn = document.querySelector("#submit");
-const sectionSendMsg = document.querySelector("#send-msg");
 const modalContainer = document.querySelector(".modal-container");
 let carEventList = [];
 let notificationId = 0;
-let timeoutId = 0;
 
 buildEventList();
 
 async function buildEventList() {
+    if (window.location.pathname.includes("notification")) return;
     const fetchUrl = "https://car-id.ru/api/report/get_all_reasons";
 
     try {
@@ -61,13 +60,16 @@ async function sendMsg(eventId) {
         });
         if (response.ok) {
             let answer = await response.json();
-            if (answer.error_code === "SEND_TIMEOUT") {
-                showError(answer.error_message, "Чуть помедленнее");
-            } else {
+
+            if (answer.notification_id) {
                 notificationId = answer.notification_id;
-                openModal(sentMessageNotice);
-                checkMsgStatus();
-            }
+                localStorage.setItem("notification_id", `${notificationId}`);
+                openModal(sentMessageNotice, checkMsgStatus);
+            } else if (answer.error_code === "SEND_TIMEOUT") {
+                showError(answer.error_message, "Чуть помедленнее");
+            } else if (answer.error_code) {
+                showError(answer.error_message, "Упс... Уже исправляем");
+            } else showError(answer);
         } else {
             showError(response.status);
         }
@@ -76,35 +78,15 @@ async function sendMsg(eventId) {
     }
 }
 
-async function checkMsgStatus() {
-    const fetchUrl = `https://car-id.ru/api/notification/${notificationId}/status`;
-
-    try {
-        let fetchAnswer = await fetch(fetchUrl);
-        if (fetchAnswer.ok) {
-            let msgStatus = await fetchAnswer.json();
-
-            if (msgStatus.status !== "UNREAD" && msgStatus.status !== "READ") {
-                showError(msgStatus.status);
-            }
-            if (msgStatus.status === "UNREAD") {
-                sectionSendMsg.innerHTML = waitingForReadingNotice;
-                timeoutId = setTimeout(() => checkMsgStatus(), 5000);
-            }
-            if (msgStatus.status === "READ") {
-                clearTimeout(timeoutId);
-                sectionSendMsg.innerHTML = readMessageNotice;
-            }
-        } else {
-            showError(response.status);
-        }
-    } catch (err) {
-        showError(err);
-    }
+function checkMsgStatus(event) {
+    closeModal(event);
+    window.location.href = `/notification/737/`;
+    // window.location.href = `/notification/${notificationId}/`;
 }
 
-function showError(err, title) {
-    openModal(`
+export function showError(err, title) {
+    openModal(
+        `
         <div class="modal">
             <div class="container">
                 <h2>${title ? title : "Сообщение об ошибке"}</h2>
@@ -113,16 +95,18 @@ function showError(err, title) {
                 <button id="close-btn" class="primary-btn">Понятно</button>
             </div>
         </div>
-    `);
+    `,
+        closeModal
+    );
 }
 
-function openModal(msgHtml) {
+export function openModal(msgHtml, cb) {
     modalContainer.innerHTML = msgHtml;
     const closeBtn = document.querySelector("#close-btn");
-    closeBtn.addEventListener("click", (event) => closeModal(event));
+    closeBtn.addEventListener("click", (event) => cb(event));
 }
 
-function closeModal(event) {
+export function closeModal(event) {
     event.preventDefault();
     modalContainer.innerHTML = "";
     window.scrollTo(0, 0);

@@ -15,7 +15,7 @@ export const waitingForReadingNotice = `
         <h2>Сообщение доставлено</h2>
         <p>Ждём, когда прочитают.</p>
         <div class="img">
-            <img src="./img/spinner.svg" width="75" width="75" alt="spinner" class="spinner"/>
+            <img src="../../img/spinner.svg" width="75" width="75" alt="spinner" class="spinner"/>
         </div>
     </div>
 `;
@@ -25,7 +25,7 @@ export const readMessageNotice = `
         <h2>Сообщение прочитано</h2>
         <p>Ожидайте водителя.</p>
         <div class="img">
-            <img src="./img/check-circle.svg" width="68" width="68" alt="check mark" />
+            <img src="../../img/check-circle.svg" width="68" width="68" alt="check mark" />
         </div>
     </div>
 `;
