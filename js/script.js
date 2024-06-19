@@ -66,7 +66,7 @@ async function createMsg() {
                 }
 
                 history.replaceState({ page: 1 }, `${window.location.hostname}`, `/notification/${notificationId}`);
-                window.location.pathname = `.${baseUrl}notification/${notificationId}`;
+                window.location.pathname = `${baseUrl}notification/${notificationId}`;
                 return;
             }
             showError(response.status);
