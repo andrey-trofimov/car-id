@@ -101,6 +101,7 @@ export function openModal(msgHtml, cb) {
 
 function closeErrorModal(event) {
     event.preventDefault();
-    history.replaceState({ page: 1 }, `${window.location.pathname}`, `/`);
-    window.location.pathname = "./";
+    const baseUrl = window.location.host.includes("github.io") ? "car-id/" : "/";
+    history.replaceState({ page: 1 }, `${window.location.pathname}`, baseUrl);
+    window.location.pathname = baseUrl;
 }
