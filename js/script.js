@@ -1,5 +1,7 @@
 const modalContainer = document.querySelector(".modal-container");
-const qrId = window.location.pathname.slice(4,40);
+const qrId = window.location.host.includes("github.io")
+    ? window.location.pathname.slice(11, 47)
+    : window.location.pathname.slice(4, 40);
 
 checkQr();
 
