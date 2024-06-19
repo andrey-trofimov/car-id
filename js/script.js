@@ -3,6 +3,8 @@ const qrId = window.location.host.includes("github.io")
     ? window.location.pathname.slice(11, 47)
     : window.location.pathname.slice(4, 40);
 
+const baseUrl = window.location.host.includes("github.io") ? "car-id/" : "/";
+
 checkQr();
 
 async function checkQr() {
@@ -64,7 +66,7 @@ async function createMsg() {
                 }
 
                 history.replaceState({ page: 1 }, `${window.location.hostname}`, `/notification/${notificationId}`);
-                window.location.pathname = `./notification/${notificationId}`;
+                window.location.pathname = `.${baseUrl}notification/${notificationId}`;
                 return;
             }
             showError(response.status);
@@ -103,7 +105,6 @@ export function openModal(msgHtml, cb) {
 
 function closeErrorModal(event) {
     event.preventDefault();
-    const baseUrl = window.location.host.includes("github.io") ? "car-id/" : "/";
     history.replaceState({ page: 1 }, `${window.location.pathname}`, baseUrl);
     window.location.pathname = baseUrl;
 }
