@@ -146,18 +146,19 @@ p {
     display: flex;
     flex-wrap: wrap;
     column-gap: 16px;
-
-    label {
-        width: 100%;
-
-        @media screen and (min-width: 600px) {
-            flex: 1;
-            min-width: 300px;
-        }
-    }
+    justify-content: space-between;
 }
 
 /* Customize the label (the custom-radio) */
+label.custom-radio {
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+        flex: 1;
+        min-width: 300px;
+    }
+}
+
 .custom-radio {
     display: flex;
     align-items: center;
