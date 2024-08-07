@@ -147,21 +147,6 @@ p {
     flex-wrap: wrap;
     column-gap: 16px;
     justify-content: space-between;
-
-    /* label {
-        width: 100%;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-
-        @media screen and (min-width: 600px) {
-            flex: 1;
-            min-width: 300px;
-            -moz-box-sizing: inherit;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-    } */
 }
 
 /* Customize the label (the custom-radio) */
